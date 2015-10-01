@@ -31,7 +31,7 @@ int logicalShift(int x, int n)
 
 int addOK(int x, int y)
  {
-     return(!!(x+y));
+     return(!!(x+y)|(!x&!y));
  }
 int bang(int x)
  {
