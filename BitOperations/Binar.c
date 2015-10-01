@@ -14,7 +14,7 @@ int thirdBits()
  }
 int fitsBits(int x, int n)
  {
-     return ( x>>n );
+     return ( x>>n ); //Wrong
  }
 int sign(int x)
  {
@@ -54,7 +54,7 @@ int main()
   scanf("%d%d%d%x%x",&a1,&a2,&a3,&a4,&a5);
   printf("bitAnd = %d\n",bitAnd(a1,a2));
   printf("bitXor = %d\n",bitXor(a1,a2));
-  printf("thirdBits (10-th) : %d\n",thirdBits()); //В десятичной СС
+  printf("thirdBits (10-th) : %d\n",thirdBits());
   printf("fitsBits = %d\n",fitsBits(a1,a2));
   printf("sign = %d\n",sign(a1));
   printf("getByte = 0x%x\n",getByte(a4,a2));
