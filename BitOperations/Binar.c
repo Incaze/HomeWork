@@ -38,9 +38,9 @@ int bang(int x)
      return((x&1)^1);
  }
 
-int conditional(int x,int y,int z) // Нужно чем-то заменить умножение
+int conditional(int x,int y,int z)
  {
-     return((((!x^1)*255)&y)+(((!x^0)*255)&z));
+     return((((!x^1)<<31>>31)&y)+(((!x^0)<<31>>31)&z));
 
  }
  /*
@@ -61,6 +61,6 @@ int main()
   printf("logicalShift = 0x%x\n",logicalShift(a4,a2)); // Wrong
   printf("addOK = %d\n",addOK(a4,a5));
   printf("bang = %d\n",bang(a1));
-  printf("conditional = %d\n",conditional(a1,a2,a3)); // Заменить умножение
+  printf("conditional = %d\n",conditional(a1,a2,a3));
   return 0;
 }
