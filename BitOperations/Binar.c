@@ -14,7 +14,7 @@ int thirdBits()
  }
 int fitsBits(int x, int n)
  {
-     return ( x>>n ); //Wrong
+    return (!(((~x & (x>>31)) + (x & ~(x>>31))) >> (n + ~0)));
  }
 int sign(int x)
  {
@@ -26,28 +26,27 @@ int getByte(int x, int n)
  }
 int logicalShift(int x, int n)
  {
-     return((x>>n)); // Wrong
+     return ((x >> n) & ((1 << (~n + 33)) + ~0));
  }
 
 int addOK(int x, int y)
  {
-     return(!!(x+y)|(!x&!y));
+	return (!(~((x>>31)^(y>>31))&((x>>31)^((x+y)>>31))));
  }
 int bang(int x)
  {
-     return((x&1)^1);
+     return((((~x+1)^x)>>31&1)^1);
  }
 
 int conditional(int x,int y,int z)
  {
      return((((!x^1)<<31>>31)&y)+(((!x^0)<<31>>31)&z));
-
  }
- /*
+
 int isPower2(int x)
  {
-     return(x>>);
- }*/
+      return(x); // Wrong
+ }
 int main()
 {
   int a1,a2,a3,a4,a5;
@@ -59,8 +58,8 @@ int main()
   printf("sign = %d\n",sign(a1));
   printf("getByte = 0x%x\n",getByte(a4,a2));
   printf("logicalShift = 0x%x\n",logicalShift(a4,a2)); // Wrong
-  printf("addOK = %d\n",addOK(a4,a5));
+  printf("addOK = %x\n",addOK(a4,a5));
   printf("bang = %d\n",bang(a1));
   printf("conditional = %d\n",conditional(a1,a2,a3));
-  return 0;
+  //printf("isPower2 = %d\n",isPower2(a1));
 }
