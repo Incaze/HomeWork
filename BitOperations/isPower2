@@ -1,0 +1,12 @@
+#include <stdio.h>
+#include <math.h>
+int isPower2(int x)
+ {
+     return(x);
+ }
+ int main()
+{
+  int a;
+  scanf("%d",&a);
+  printf("%d\n",isPower2(a));
+}
