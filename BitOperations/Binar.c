@@ -57,8 +57,8 @@ int main()
   printf("fitsBits = %d\n",fitsBits(a1,a2));
   printf("sign = %d\n",sign(a1));
   printf("getByte = 0x%x\n",getByte(a4,a2));
-  printf("logicalShift = 0x%x\n",logicalShift(a4,a2)); // Wrong
-  printf("addOK = %x\n",addOK(a4,a5));
+  printf("logicalShift = 0x%x\n",logicalShift(a4,a2));
+  printf("addOK = %d\n",addOK(a4,a5));
   printf("bang = %d\n",bang(a1));
   printf("conditional = %d\n",conditional(a1,a2,a3));
   //printf("isPower2 = %d\n",isPower2(a1));
