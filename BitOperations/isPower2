@@ -2,11 +2,11 @@
 #include <math.h>
 int isPower2(int x)
  {
-     return(x);
+     return (!(x&(x+~0))&!!(x));
  }
- int main()
+int main()
 {
-  int a;
-  scanf("%d",&a);
-  printf("%d\n",isPower2(a));
+    int a;
+scanf("%d",&a);
+printf("%d\n",isPower2(a));
 }
