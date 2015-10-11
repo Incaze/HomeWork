@@ -2,7 +2,7 @@
 #include <math.h>
 int isPower2(int x)
  {
-     return ( !( x >> 31 ) & !( x & ( x + ~0 ) ) & !!x );
+     return  !(x >> 31) & !(x & (x + ~0)) & !!x ;
  }
 int main()
 {
