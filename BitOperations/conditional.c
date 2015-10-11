@@ -2,7 +2,7 @@
 #include <math.h>
 int conditional(int x,int y,int z)
  {
-     return((((!x^1)<<31>>31)&y)+(((!x^0)<<31>>31)&z));
+     return(((!x ^ 1) << 31 >> 31) & y) + (((!x ^ 0) << 31 >> 31) & z);
  }
  int main()
 {

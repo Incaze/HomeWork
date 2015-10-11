@@ -2,7 +2,7 @@
 #include <math.h>
 int logicalShift(int x, int n)
  {
-     return ((x >> n) & ((1 << (~n + 33)) + ~0));
+     return ((x >> n) & ((1 << (~n + 33)) + ~0)) | (!n << 31 >> 31 & x);
  }
  int main()
 {

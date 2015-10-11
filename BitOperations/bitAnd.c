@@ -2,7 +2,7 @@
 #include <math.h>
 int bitAnd(int x, int y)
  {
-	return (~(~x | ~y));
+	return ~(~x | ~y);
  }
  int main()
 {
