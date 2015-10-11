@@ -2,7 +2,7 @@
 #include <math.h>
 int sign(int x)
  {
-     return(!!x | (x >> 31));
+     return !!x | (x >> 31);
  }
  int main()
 {
