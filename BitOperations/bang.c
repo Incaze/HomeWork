@@ -2,7 +2,7 @@
 #include <math.h>
 int bang(int x)
  {
-	return((((~x+1)^x)>>31&1)^1);
+	return ((((~x + 1) ^ !x) >> 31 & 1) ^ 1) & !(x >> 31);
  }
  int main()
 {
