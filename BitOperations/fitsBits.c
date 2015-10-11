@@ -2,7 +2,7 @@
 #include <math.h>
 int fitsBits(int x, int n)
  {
-    return (!(((~x & (x >> 31)) + (x & ~(x >> 31))) >> (n + ~0)));
+    return !(((~x & (x >> 31)) + (x & ~(x >> 31))) >> (n + ~0));
  }
  int main()
 {
