@@ -1,0 +1,60 @@
+ldc 2000000
+st 0 					; Kek[0] = 2000000
+ldc 1
+st 1 					; Kek[1] = 1
+ldc 2 
+st 2 					; Kek[2] = 2
+ldc 0
+st 0 					; Kek[3] = 0 Res
+
+exit: 
+		ld 3 			; Answer
+		ret
+		
+Write:                  
+		ld 2 			      ; x
+		ld 3			      ; y
+		add				      ; x + y
+		st 3			      ; Kek[3] = x + y
+		jmp solve	    	; continue
+		
+subtract:
+		ldc 2     	  	; for sub 
+		ld 4        		; z
+		sub       			; z - 2
+		st 4            ; Kek[4] = z - 2
+		jmp equalNull?  ; repeat
+		
+aboveNull?:
+		ldc 1           ; for check 
+		ld 4            ; z
+		cmp 			      ; (z > 1)?
+		br subtract     ; z != 1
+		jmp solve 		  ; z == 1
+		
+equalNull?:
+		ldc 0 			    ; for check
+		ld 4  			    ; z
+		cmp				      ; (z == 0)?
+		br aboveNull? 	; !Null
+		jmp write		    ; z == 0
+		
+check:
+		ldc 1   		; for cmp++
+		ld 0    		; 2000000  Num1
+		ld 2    		; x + y 	 Num2
+		cmp     		; Num2 vs Num1   (1>, 0=, -1<)
+		add     		; cmp++
+		br exit 		; if ((x + y) >= 2000000)
+						    ; else..
+		ld 2    		; x + y
+		st 4    		; Kek[4] = x + y
+		jmp equalNull?
+solve:
+		ld 1 			; F[N] = x
+		ld 2 			; F[N + 1] = y
+		add  			; F[N + 2] = x + y
+		ld 2 			; F[N + 1] = y
+		st 1 			; Kek[1] = F[N + 1]
+		st 2 			; Kek[2] = F[N + 2]
+		jmp check
