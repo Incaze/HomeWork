@@ -6,38 +6,39 @@ ldc 2
 st 2 					; Kek[2] = 2
 ldc 0
 st 0 					; Kek[3] = 0 Res
+jmp solve
 
 exit: 
 		ld 3 			; Answer
 		ret
 		
 Write:                  
-		ld 2 			      ; x
-		ld 3			      ; y
-		add				      ; x + y
-		st 3			      ; Kek[3] = x + y
-		jmp solve	    	; continue
+		ld 2 			; x
+		ld 3			; y
+		add				; x + y
+		st 3			; Kek[3] = x + y
+		jmp solve		; continue
 		
 subtract:
-		ldc 2     	  	; for sub 
-		ld 4        		; z
-		sub       			; z - 2
+		ldc 2     		; for sub 
+		ld 4      		; z
+		sub 			; z - 2
 		st 4            ; Kek[4] = z - 2
 		jmp equalNull?  ; repeat
 		
 aboveNull?:
 		ldc 1           ; for check 
 		ld 4            ; z
-		cmp 			      ; (z > 1)?
+		cmp 			; (z > 1)?
 		br subtract     ; z != 1
-		jmp solve 		  ; z == 1
+		jmp solve 		; z == 1
 		
 equalNull?:
-		ldc 0 			    ; for check
-		ld 4  			    ; z
-		cmp				      ; (z == 0)?
+		ldc 0 			; for check
+		ld 4  			; z
+		cmp				; (z == 0)?
 		br aboveNull? 	; !Null
-		jmp write		    ; z == 0
+		jmp write		; z == 0
 		
 check:
 		ldc 1   		; for cmp++
@@ -46,7 +47,7 @@ check:
 		cmp     		; Num2 vs Num1   (1>, 0=, -1<)
 		add     		; cmp++
 		br exit 		; if ((x + y) >= 2000000)
-						    ; else..
+						; else..
 		ld 2    		; x + y
 		st 4    		; Kek[4] = x + y
 		jmp equalNull?
