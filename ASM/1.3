@@ -1,0 +1,72 @@
+ldc 10001
+st 0
+ldc 1 
+st 1 ; current i k = 1
+ldc 2 
+st 2 ; current k = 2
+ldc 2 
+st 3 ; substract  k = 3
+ld 2
+st 4
+jmp substract
+
+exit:
+ld 1
+ret
+
+substract: 
+ld 0
+ld 1
+cmp
+ldc 1
+add
+br exit
+ld 3
+ld 4
+sub
+st 4
+jmp equalNull
+
+equalNull:
+ldc 0           
+ld 4            
+cmp 			
+br lowerNull   
+jmp nextNum  	
+	
+lowerNull:
+ldc 0
+ld 4
+cmp 
+ldc 1
+sub
+br incSub
+jmp substract
+	
+incSub:
+ld 3
+ldc 1
+add
+ld 2
+st 4
+cmp
+st 5
+ldc 1
+ld 5
+sub
+br nextNum
+jmp substract
+		
+nextNum:
+ldc 1
+ld 2
+add
+st 2
+st 4
+ldc 2
+st 3
+ld 1
+ldc 1
+add
+st 1
+jmp substract
