@@ -21,7 +21,7 @@ int main()
 	int s = socket(AF_INET,SOCK_STREAM,IPPROTO_TCP);
 	if (s < 0)
     {
-        printf("can't open socket");
+		printf("can't open socket");
         return 1;
     }
 	SOCKADDR_IN sin;
@@ -34,7 +34,7 @@ int main()
         close(s);
         printf("can't bind");
         return 1;
-    }
+   	}
     listen(s, MAXCONNECT);
     SOCKADDR_IN from;
 	int fromlen = sizeof(from);
