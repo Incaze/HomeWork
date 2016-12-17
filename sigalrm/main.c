@@ -21,6 +21,8 @@ void signal_handler(int signal, siginfo_t *info, void *ctx) {
 	printf("%s: out\n", __func__);
 }
 
+// TODO start
+
 typedef struct {
     long int priority;
     void *data;
@@ -120,9 +122,6 @@ void *pq_show_next(pq_t *h) {
 
     return h->nodes[1].data;
 }
-
-
-// TODO start
 
 struct timeval time_from_start = {
 	.tv_sec = 0,
