@@ -1,0 +1,17 @@
+radius = 2
+
+threads: 1
+Horizontal 1287.113 ms
+Vertical 1087.689 ms
+
+threads: 2
+Horizontal 915.8732 ms
+Vertical 834.189348 ms
+
+threads: 4
+Horizontal 821.34928 ms
+Vertical 715.1348 ms
+
+threads: 8
+Horizontal 835.89846 ms
+Vertical 717.763765 ms
