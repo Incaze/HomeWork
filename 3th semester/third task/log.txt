@@ -1,0 +1,6 @@
+count_of_points = 100000
+num_of_clusters = 100
+eta = 20 
+
+seq = 1897.2357 ms
+parSeq = 915.02187 ms
