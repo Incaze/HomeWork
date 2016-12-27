@@ -4,3 +4,4 @@ eta = 20
 
 seq = 1897.2357 ms
 parSeq = 915.02187 ms
+speed boost = 2,0734
