@@ -14,6 +14,6 @@ Brackets
 4 thread : 0.6932 ms
 
 Turtle
-1 thread 0.5638 ms
-2 thread 0.4877 ms
-4 thread 0.4632 ms
+1 thread : 0.5638 ms
+2 thread : 0.4877 ms
+4 thread : 0.4632 ms
