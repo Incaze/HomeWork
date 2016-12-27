@@ -1,0 +1,19 @@
+Adding Big Integers
+1 thread : 1.1758 ms
+2 thread : 0.6389 ms
+4 thread : 0.5279 ms
+
+Linear Equations
+1 thread : 2.2357 ms
+2 thread : 1.2409 ms
+4 thread : 1.9388 ms
+
+Brackets
+1 thread : 0.9234 ms
+2 thread : 0.7115 ms
+4 thread : 0.6932 ms
+
+Turtle
+1 thread 0.5638 ms
+2 thread 0.4877 ms
+4 thread 0.4632 ms
